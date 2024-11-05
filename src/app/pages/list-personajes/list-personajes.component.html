@@ -1,0 +1,32 @@
+<div class="container mt-4">
+  <h2>Lista de Personajes</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Imagen</th>
+        <th>Nombre</th>
+        <th>Especie</th>
+        <th>Género</th>
+        <th>Estado</th>
+        <th>Origen</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let personaje of personajes">
+        <td>{{ personaje.id }}</td>
+        <td><img [src]="personaje.image" alt="{{ personaje.name }}" class="img-thumbnail" width="80"></td>
+        <td>{{ personaje.name }}</td>
+        <td>{{ personaje.species }}</td>
+        <td>{{ personaje.gender }}</td>
+        <td>{{ personaje.status }}</td>
+        <td>{{ personaje.origin?.name }}</td>
+        <td>
+          <button (click)="editarPersonaje(personaje.id)" class="btn btn-warning btn-sm">Editar</button>
+          <button (click)="eliminarPersonaje(personaje.id)" class="btn btn-danger btn-sm">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,24 @@
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="row text-center">
+      <!-- Tarjeta de Personajes -->
+      <div class="col-md-6 mb-4">
+        <app-card
+          title="Personajes"
+          description="Consulta la lista de personajes"
+          [imageUrl]="personajeImageUrl"
+          (onRedirect)="goToPersonajes()"
+        ></app-card>
+      </div>
+  
+      <!-- Tarjeta de Héroes -->
+      <div class="col-md-6 mb-4">
+        <app-card
+          title="Héroes"
+          description="Consulta la lista de héroes"
+          [imageUrl]="heroeImageUrl"
+          (onRedirect)="goToHeroes()"
+        ></app-card>
+      </div>
+    </div>
+  </div>
+  

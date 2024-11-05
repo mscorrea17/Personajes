@@ -1,0 +1,28 @@
+<div class="container mt-4">
+    <h2 *ngIf="isEditMode">Editar Héroe</h2>
+    <h2 *ngIf="!isEditMode">Crear Nuevo Héroe</h2>
+    <form [formGroup]="heroeForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input id="nombre" type="text" class="form-control" formControlName="nombre" />
+      </div>
+      <div class="mb-3">
+        <label for="bio" class="form-label">Biografía</label>
+        <textarea id="bio" class="form-control" formControlName="bio"></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="casa" class="form-label">Casa</label>
+        <input id="casa" type="text" class="form-control" formControlName="casa" />
+      </div>
+      <div class="mb-3">
+        <label for="aparicion" class="form-label">Aparición</label>
+        <input id="aparicion" type="date" class="form-control" formControlName="aparicion" />
+      </div>
+      <div class="mb-3">
+        <label for="img" class="form-label">URL de Imagen</label>
+        <input id="img" type="text" class="form-control" formControlName="img" />
+      </div>
+      <button type="submit" class="btn btn-primary">{{ isEditMode ? 'Guardar Cambios' : 'Crear Héroe' }}</button>
+    </form>
+  </div>
+  

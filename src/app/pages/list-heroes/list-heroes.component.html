@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <h2>Lista de Héroes</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Imagen</th>
+        <th>Nombre</th>
+        <th>Casa</th>
+        <th>Aparición</th>
+        <th>Biografía</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let heroe of heroes">
+        <td>{{ heroe._id }}</td>
+        <td><img [src]="heroe.img" alt="{{ heroe.nombre }}" class="img-thumbnail" width="80"></td>
+        <td>{{ heroe.nombre }}</td>
+        <td>{{ heroe.casa }}</td>
+        <td>{{ heroe.aparicion | date: 'MMM d, y' }}</td>
+        <td>{{ heroe.bio }}</td>
+        <td>
+          <button (click)="editarHeroe(heroe._id)" class="btn btn-warning btn-sm">Editar</button>
+          <button (click)="eliminarHeroe(heroe._id)" class="btn btn-danger btn-sm">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

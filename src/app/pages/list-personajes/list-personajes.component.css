@@ -1,0 +1,9 @@
+.img-thumbnail {
+    height: auto;
+    max-width: 80px;
+    object-fit: cover;
+  }
+  
+  .table th, .table td {
+    vertical-align: middle;
+  }

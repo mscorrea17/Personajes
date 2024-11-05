@@ -1,0 +1,28 @@
+<div class="container mt-4">
+    <h2 *ngIf="isEditMode">Editar Personaje</h2>
+    <h2 *ngIf="!isEditMode">Crear Nuevo Personaje</h2>
+    <form [formGroup]="personajeForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="name" class="form-label">Nombre</label>
+        <input id="name" type="text" class="form-control" formControlName="name" />
+      </div>
+      <div class="mb-3">
+        <label for="gender" class="form-label">Género</label>
+        <input id="gender" type="text" class="form-control" formControlName="gender" />
+      </div>
+      <div class="mb-3">
+        <label for="species" class="form-label">Especie</label>
+        <input id="species" type="text" class="form-control" formControlName="species" />
+      </div>
+      <div class="mb-3">
+        <label for="status" class="form-label">Estado</label>
+        <input id="status" type="text" class="form-control" formControlName="status" />
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-label">URL de Imagen</label>
+        <input id="image" type="text" class="form-control" formControlName="image" />
+      </div>
+      <button type="submit" class="btn btn-primary">{{ isEditMode ? 'Guardar Cambios' : 'Crear Personaje' }}</button>
+    </form>
+  </div>
+  
